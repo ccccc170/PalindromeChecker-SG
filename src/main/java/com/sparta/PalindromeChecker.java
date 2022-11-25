@@ -2,6 +2,10 @@ package com.sparta;
 
 public class PalindromeChecker {
     public static boolean checkPalindrome(String string) {
+        if (string.equals("")) {
+            return false;
+        }
+
         String newString = "";
         String reverseString = "";
         for (int i = 0; i < string.length(); i++) {
@@ -22,4 +26,6 @@ public class PalindromeChecker {
             return false;
         }
     }
+
+
 }

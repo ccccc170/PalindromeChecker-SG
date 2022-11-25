@@ -2,12 +2,21 @@ package com.test;
 
 import com.sparta.PalindromeChecker;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CheckPalindromeTest {
+    @Test
+    @DisplayName("Should return false when passed an empty string")
+    public void PassedEmptyString() {
+        Boolean expectedResponse = false;
+        Boolean result = PalindromeChecker.checkPalindrome("");
+        assertEquals(expectedResponse, result);
+    }
+
     @ParameterizedTest
     @ValueSource(strings = {"pop", "racecar", "deified"})
     @DisplayName("Should return true when passed a lowercase palindrome with no spaces, numbers or special characters")
